@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Watchlist film pribadi Anda di CineScope, tersimpan langsung di browser.">
+  <meta name="theme-color" content="#0d0d0e">
+  <title>Watchlist — CineScope</title>
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Lewati ke konten utama</a>
+
+  <header class="site-header" data-site-header>
+    <div class="header__inner container">
+      <a class="brand" href="index.html" aria-label="CineScope — Beranda">
+        <span class="brand__mark" aria-hidden="true"><svg class="icon"><use href="assets/icons/sprite.svg#icon-play"></use></svg></span>
+        <span class="brand__name">Cine<span>Scope</span></span>
+      </a>
+      <nav class="site-nav" id="site-navigation" aria-label="Navigasi utama" data-site-nav>
+        <a href="index.html">Beranda</a>
+        <a href="explore.html">Jelajahi</a>
+        <a href="watchlist.html" aria-current="page">Watchlist</a>
+        <a href="history.html">Riwayat</a>
+        <a href="about.html">Tentang</a>
+      </nav>
+      <form class="header-search" role="search" data-global-search action="explore.html" method="get">
+        <svg class="icon header-search__icon" aria-hidden="true"><use href="assets/icons/sprite.svg#icon-search"></use></svg>
+        <label class="sr-only" for="global-search">Cari film</label>
+        <input id="global-search" name="q" type="search" placeholder="Cari film..." autocomplete="off" maxlength="120" required>
+        <button class="sr-only" type="submit">Cari film</button>
+      </form>
+      <div class="header-actions">
+        <a class="header-icon" href="watchlist.html" aria-label="Buka Watchlist" title="Watchlist">
+          <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#icon-bookmark"></use></svg>
+          <span class="header-icon__badge" data-watchlist-count data-hide-zero hidden>0</span>
+        </a>
+        <a class="header-icon header-icon--settings" href="about.html#pengaturan" aria-label="Buka pengaturan" title="Pengaturan">
+          <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#icon-settings"></use></svg>
+        </a>
+        <button class="header-icon menu-toggle" type="button" aria-label="Buka menu" aria-expanded="false" aria-controls="site-navigation" data-menu-toggle>
+          <span class="menu-toggle__open"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#icon-menu"></use></svg></span>
+          <span class="menu-toggle__close"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#icon-close"></use></svg></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div id="app-notice" class="container app-notice" hidden></div>
+
+  <main id="main" class="page collection-page" data-watchlist-page>
+    <div class="container">
+      <header class="page-head">
+        <div class="page-head__copy">
+          <p class="eyebrow">Koleksi pribadi</p>
+          <h1>Watchlist</h1>
+          <p class="page-head__description">Film yang Anda simpan untuk ditonton nanti. Koleksi ini hanya tersimpan di browser ini.</p>
+        </div>
+      </header>
+
+      <div class="collection-toolbar">
+        <p class="collection-summary" data-watchlist-summary>Memuat Watchlist…</p>
+        <button class="button button--danger button--small" type="button" data-clear-watchlist>
+          <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#icon-trash"></use></svg>
+          Hapus semua
+        </button>
+      </div>
+
+      <section aria-label="Film dalam Watchlist">
+        <div class="collection-grid" data-watchlist-grid></div>
+        <div class="collection-state" data-watchlist-state hidden></div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer__inner container">
+      <div class="footer__brand">
+        <a class="brand" href="index.html" aria-label="CineScope — Beranda">
+          <span class="brand__mark" aria-hidden="true"><svg class="icon"><use href="assets/icons/sprite.svg#icon-play"></use></svg></span>
+          <span class="brand__name">Cine<span>Scope</span></span>
+        </a>
+        <p class="footer__description">Temukan film, tonton trailer, lalu simpan pilihan Anda dalam Watchlist pribadi. Semua data disimpan di browser ini.</p>
+      </div>
+      <nav class="footer__nav" aria-label="Navigasi footer">
+        <p class="footer__nav-title">Jelajahi</p>
+        <a href="index.html">Beranda</a>
+        <a href="explore.html">Semua film</a>
+        <a href="watchlist.html">Watchlist</a>
+        <a href="history.html">Riwayat</a>
+        <a href="about.html">Tentang</a>
+      </nav>
+      <div class="footer__attribution">
+        <a href="https://www.themoviedb.org/" target="_blank" rel="noopener noreferrer" aria-label="Kunjungi The Movie Database (TMDB)">
+          <img class="tmdb-logo" src="assets/images/tmdb-logo.svg" alt="The Movie Database" width="142" height="11">
+        </a>
+        <p class="footer__notice">This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
+        <p class="footer__notice">CineScope hanya menyediakan metadata film dan trailer dari YouTube, bukan film lengkap.</p>
+      </div>
+    </div>
+    <div class="footer__bottom container">
+      <p>© <span data-current-year></span> CineScope. Dibuat untuk eksplorasi film.</p>
+      <p>Trailer adalah milik pemiliknya masing-masing.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
+  <script type="module" src="js/watchlist.js"></script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Tentang CineScope, sumber data TMDB, pemutar trailer YouTube, privasi, dan pengaturan data lokal.">
+  <meta name="theme-color" content="#0d0d0e">
+  <title>Tentang &amp; Pengaturan — CineScope</title>
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Lewati ke konten utama</a>
+
+  <header class="site-header" data-site-header>
+    <div class="header__inner container">
+      <a class="brand" href="index.html" aria-label="CineScope — Beranda">
+        <span class="brand__mark" aria-hidden="true"><svg class="icon"><use href="assets/icons/sprite.svg#icon-play"></use></svg></span>
+        <span class="brand__name">Cine<span>Scope</span></span>
+      </a>
+      <nav class="site-nav" id="site-navigation" aria-label="Navigasi utama" data-site-nav>
+        <a href="index.html">Beranda</a>
+        <a href="explore.html">Jelajahi</a>
+        <a href="watchlist.html">Watchlist</a>
+        <a href="history.html">Riwayat</a>
+        <a href="about.html" aria-current="page">Tentang</a>
+      </nav>
+      <form class="header-search" role="search" data-global-search action="explore.html" method="get">
+        <svg class="icon header-search__icon" aria-hidden="true"><use href="assets/icons/sprite.svg#icon-search"></use></svg>
+        <label class="sr-only" for="global-search">Cari film</label>
+        <input id="global-search" name="q" type="search" placeholder="Cari film..." autocomplete="off" maxlength="120" required>
+        <button class="sr-only" type="submit">Cari film</button>
+      </form>
+      <div class="header-actions">
+        <a class="header-icon" href="watchlist.html" aria-label="Buka Watchlist" title="Watchlist">
+          <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#icon-bookmark"></use></svg>
+          <span class="header-icon__badge" data-watchlist-count data-hide-zero hidden>0</span>
+        </a>
+        <a class="header-icon header-icon--settings" href="about.html#pengaturan" aria-label="Buka pengaturan" title="Pengaturan">
+          <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#icon-settings"></use></svg>
+        </a>
+        <button class="header-icon menu-toggle" type="button" aria-label="Buka menu" aria-expanded="false" aria-controls="site-navigation" data-menu-toggle>
+          <span class="menu-toggle__open"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#icon-menu"></use></svg></span>
+          <span class="menu-toggle__close"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#icon-close"></use></svg></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div id="app-notice" class="container app-notice" hidden></div>
+
+  <main id="main" class="page about-page">
+    <div class="container">
+      <header class="page-head">
+        <div class="page-head__copy">
+          <p class="eyebrow">Tentang CineScope</p>
+          <h1>Film, tanpa dibuat rumit.</h1>
+          <p class="about-lead">CineScope adalah ruang sederhana untuk menemukan film, melihat informasi dan trailer, serta menyimpan daftar tontonan pribadi. Tanpa akun, tanpa langganan, dan tanpa klaim yang tidak perlu.</p>
+        </div>
+      </header>
+
+      <div class="about-grid">
+        <div>
+          <section class="about-card" aria-labelledby="about-what">
+            <h2 id="about-what">Apa yang bisa dilakukan?</h2>
+            <p>CineScope mengambil katalog film dari TMDB, kemudian menampilkannya dalam tampilan yang nyaman untuk dijelajahi di ponsel, tablet, maupun desktop.</p>
+            <ul>
+              <li>Melihat film yang sedang tren, populer, rating tertinggi, dan yang segera tayang.</li>
+              <li>Mencari film berdasarkan judul, genre, dan tahun rilis.</li>
+              <li>Membuka detail, pemeran, rekomendasi, serta trailer dari YouTube.</li>
+              <li>Menyimpan film ke Watchlist dan membuka kembali riwayat tontonan.</li>
+            </ul>
+          </section>
+
+          <section class="about-card" aria-labelledby="about-data">
+            <h2 id="about-data">Tentang data dan privasi</h2>
+            <p>Watchlist dan riwayat disimpan di <strong>localStorage browser Anda</strong>. Data tersebut tidak dikirim ke server CineScope karena CineScope tidak memiliki backend maupun database pengguna. Menghapus data situs di browser juga akan menghapus koleksi Anda.</p>
+            <p>Permintaan katalog dan trailer dikirim langsung dari browser ke API TMDB dan YouTube. Layanan tersebut memiliki kebijakan privasi dan ketentuan penggunaannya sendiri.</p>
+            <h3>Batasan yang perlu diketahui</h3>
+            <ul>
+              <li>CineScope tidak menyediakan film lengkap dan tidak melewati pembatasan hak cipta.</li>
+              <li>Ketersediaan trailer bergantung pada data TMDB dan izin penyematan dari pemilik video YouTube.</li>
+              <li>Rating yang ditampilkan berasal dari TMDB dan dapat berbeda dari sumber lain.</li>
+              <li>API key TMDB pada situs statis dapat terlihat oleh pengunjung. Jangan gunakan key rahasia atau key produksi di deployment publik.</li>
+            </ul>
+          </section>
+
+          <section class="about-card attribution-card" aria-labelledby="about-attribution">
+            <h2 id="about-attribution">Atribusi TMDB</h2>
+            <a href="https://www.themoviedb.org/" target="_blank" rel="noopener noreferrer" aria-label="Kunjungi The Movie Database (TMDB)">
+              <img class="tmdb-logo" src="assets/images/tmdb-logo.svg" alt="The Movie Database" width="142" height="11">
+            </a>
+            <p class="attribution-notice">This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
+            <p>Data film, poster, gambar latar, dan metadata video berasal dari TMDB. CineScope memakai TMDB API v3 dan menampilkan atribusi sesuai ketentuan TMDB. Pelajari <a href="https://developer.themoviedb.org/docs" target="_blank" rel="noopener noreferrer">dokumentasi API TMDB</a>.</p>
+            <p>Pemutaran trailer menggunakan YouTube IFrame Player API. Video tetap dimiliki oleh pemiliknya masing-masing. Baca <a href="https://www.youtube.com/t/terms" target="_blank" rel="noopener noreferrer">Ketentuan Layanan YouTube</a>.</p>
+          </section>
+        </div>
+
+        <aside>
+          <section class="about-card" id="pengaturan" aria-labelledby="settings-title">
+            <h2 id="settings-title">Data &amp; pengaturan</h2>
+            <p>Kelola data yang tersimpan di browser ini. Tindakan penghapusan tidak dapat dibatalkan.</p>
+            <div class="data-actions">
+              <div class="data-action">
+                <div class="data-action__copy">
+                  <p class="data-action__title">Watchlist</p>
+                  <p class="data-action__text">Saat ini <span data-watchlist-count>0</span> film tersimpan.</p>
+                </div>
+                <button class="button button--danger button--small" type="button" data-clear-watchlist>Kosongkan</button>
+              </div>
+              <div class="data-action">
+                <div class="data-action__copy">
+                  <p class="data-action__title">Riwayat</p>
+                  <p class="data-action__text">Saat ini <span data-history-count>0</span> film pernah dibuka.</p>
+                </div>
+                <button class="button button--danger button--small" type="button" data-clear-history>Kosongkan</button>
+              </div>
+            </div>
+            <h3>Tampilan</h3>
+            <p>CineScope memakai antarmuka gelap yang dioptimalkan untuk pengalaman menonton. Preferensi pengurangan animasi dari sistem Anda tetap dihormati.</p>
+            <p class="about-note">Tidak ada akun, pembayaran, atau profil palsu di CineScope. Semua fungsi berjalan di browser Anda.</p>
+          </section>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer__inner container">
+      <div class="footer__brand">
+        <a class="brand" href="index.html" aria-label="CineScope — Beranda">
+          <span class="brand__mark" aria-hidden="true"><svg class="icon"><use href="assets/icons/sprite.svg#icon-play"></use></svg></span>
+          <span class="brand__name">Cine<span>Scope</span></span>
+        </a>
+        <p class="footer__description">Temukan film, tonton trailer, lalu simpan pilihan Anda dalam Watchlist pribadi. Semua data disimpan di browser ini.</p>
+      </div>
+      <nav class="footer__nav" aria-label="Navigasi footer">
+        <p class="footer__nav-title">Jelajahi</p>
+        <a href="index.html">Beranda</a>
+        <a href="explore.html">Semua film</a>
+        <a href="watchlist.html">Watchlist</a>
+        <a href="history.html">Riwayat</a>
+        <a href="about.html">Tentang</a>
+      </nav>
+      <div class="footer__attribution">
+        <a href="https://www.themoviedb.org/" target="_blank" rel="noopener noreferrer" aria-label="Kunjungi The Movie Database (TMDB)">
+          <img class="tmdb-logo" src="assets/images/tmdb-logo.svg" alt="The Movie Database" width="142" height="11">
+        </a>
+        <p class="footer__notice">This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
+        <p class="footer__notice">CineScope hanya menyediakan metadata film dan trailer dari YouTube, bukan film lengkap.</p>
+      </div>
+    </div>
+    <div class="footer__bottom container">
+      <p>© <span data-current-year></span> CineScope. Dibuat untuk eksplorasi film.</p>
+      <p>Trailer adalah milik pemiliknya masing-masing.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

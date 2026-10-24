@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-label="Gambar latar tidak tersedia">
+  <rect width="1280" height="720" fill="#141416"/>
+  <g fill="none" stroke="#333338" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="500" y="260" width="280" height="200" rx="24"/>
+    <path d="M500 320h280M555 260v-40M725 260v-40M555 460v40M725 460v40"/>
+    <path d="m610 330 60 30-60 30z"/>
+  </g>
+</svg>

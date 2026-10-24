@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CineScope membantu Anda menemukan film populer, mencari trailer, dan menyimpan Watchlist pribadi.">
+  <meta name="theme-color" content="#0d0d0e">
+  <title>CineScope — Temukan film berikutnya</title>
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Lewati ke konten utama</a>
+
+  <header class="site-header" data-site-header>
+    <div class="header__inner container">
+      <a class="brand" href="index.html" aria-label="CineScope — Beranda">
+        <span class="brand__mark" aria-hidden="true"><svg class="icon"><use href="assets/icons/sprite.svg#icon-play"></use></svg></span>
+        <span class="brand__name">Cine<span>Scope</span></span>
+      </a>
+      <nav class="site-nav" id="site-navigation" aria-label="Navigasi utama" data-site-nav>
+        <a href="index.html" aria-current="page">Beranda</a>
+        <a href="explore.html">Jelajahi</a>
+        <a href="watchlist.html">Watchlist</a>
+        <a href="history.html">Riwayat</a>
+        <a href="about.html">Tentang</a>
+      </nav>
+      <form class="header-search" role="search" data-global-search action="explore.html" method="get">
+        <svg class="icon header-search__icon" aria-hidden="true"><use href="assets/icons/sprite.svg#icon-search"></use></svg>
+        <label class="sr-only" for="global-search">Cari film</label>
+        <input id="global-search" name="q" type="search" placeholder="Cari film..." autocomplete="off" maxlength="120" required>
+        <button class="sr-only" type="submit">Cari film</button>
+      </form>
+      <div class="header-actions">
+        <a class="header-icon" href="watchlist.html" aria-label="Buka Watchlist" title="Watchlist">
+          <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#icon-bookmark"></use></svg>
+          <span class="header-icon__badge" data-watchlist-count data-hide-zero hidden>0</span>
+        </a>
+        <a class="header-icon header-icon--settings" href="about.html#pengaturan" aria-label="Buka pengaturan" title="Pengaturan">
+          <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#icon-settings"></use></svg>
+        </a>
+        <button class="header-icon menu-toggle" type="button" aria-label="Buka menu" aria-expanded="false" aria-controls="site-navigation" data-menu-toggle>
+          <span class="menu-toggle__open"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#icon-menu"></use></svg></span>
+          <span class="menu-toggle__close"><svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#icon-close"></use></svg></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div id="app-notice" class="container app-notice" hidden></div>
+
+  <main id="main" class="home page">
+    <div class="container" data-home>
+      <h1 class="sr-only">CineScope — jelajahi film, trailer, dan Watchlist pribadi</h1>
+
+      <section class="home-top" aria-label="Film unggulan dan Watchlist">
+        <div class="hero" data-hero aria-busy="true"></div>
+        <aside class="rail" data-watchlist-rail aria-labelledby="rail-watchlist-title">
+          <div class="rail__head">
+            <h2 id="rail-watchlist-title">Watchlist</h2>
+            <a href="watchlist.html">Lihat semua</a>
+          </div>
+          <div class="rail__list" data-rail-list></div>
+        </aside>
+      </section>
+
+      <section class="genre-strip" data-genre-section aria-labelledby="home-genre-title">
+        <h2 class="genre-strip__title" id="home-genre-title">Temukan berdasarkan genre</h2>
+        <div class="genre-strip__scroller" data-home-genres></div>
+      </section>
+
+      <section class="movie-section" data-home-section="trending" aria-labelledby="trending-title">
+        <div class="section-head">
+          <h2 id="trending-title">Sedang Tren</h2>
+          <div class="carousel-controls">
+            <button class="carousel-button" type="button" data-carousel-prev aria-label="Film sedang tren sebelumnya">
+              <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#icon-chevron-left"></use></svg>
+            </button>
+            <button class="carousel-button" type="button" data-carousel-next aria-label="Film sedang tren berikutnya">
+              <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#icon-chevron-right"></use></svg>
+            </button>
+          </div>
+        </div>
+        <div class="movie-row" data-track></div>
+      </section>
+
+      <section class="movie-section" data-home-section="popular" aria-labelledby="popular-title">
+        <div class="section-head">
+          <h2 id="popular-title">Populer</h2>
+          <div class="carousel-controls">
+            <button class="carousel-button" type="button" data-carousel-prev aria-label="Film populer sebelumnya">
+              <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#icon-chevron-left"></use></svg>
+            </button>
+            <button class="carousel-button" type="button" data-carousel-next aria-label="Film populer berikutnya">
+              <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#icon-chevron-right"></use></svg>
+            </button>
+          </div>
+        </div>
+        <div class="movie-row" data-track></div>
+      </section>
+
+      <section class="movie-section" data-home-section="top_rated" aria-labelledby="top-rated-title">
+        <div class="section-head">
+          <h2 id="top-rated-title">Rating Tertinggi</h2>
+          <div class="carousel-controls">
+            <button class="carousel-button" type="button" data-carousel-prev aria-label="Film rating tertinggi sebelumnya">
+              <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#icon-chevron-left"></use></svg>
+            </button>
+            <button class="carousel-button" type="button" data-carousel-next aria-label="Film rating tertinggi berikutnya">
+              <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#icon-chevron-right"></use></svg>
+            </button>
+          </div>
+        </div>
+        <div class="movie-row" data-track></div>
+      </section>
+
+      <section class="movie-section" data-home-section="upcoming" aria-labelledby="upcoming-title">
+        <div class="section-head">
+          <h2 id="upcoming-title">Segera Tayang</h2>
+          <div class="carousel-controls">
+            <button class="carousel-button" type="button" data-carousel-prev aria-label="Film segera tayang sebelumnya">
+              <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#icon-chevron-left"></use></svg>
+            </button>
+            <button class="carousel-button" type="button" data-carousel-next aria-label="Film segera tayang berikutnya">
+              <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#icon-chevron-right"></use></svg>
+            </button>
+          </div>
+        </div>
+        <div class="movie-row" data-track></div>
+      </section>
+
+      <section class="movie-section" data-recent-section aria-labelledby="recent-title" hidden>
+        <div class="section-head">
+          <div>
+            <h2 id="recent-title">Baru Dilihat</h2>
+            <p class="section-head__note">Lanjutkan dari film yang terakhir Anda buka.</p>
+          </div>
+          <div class="carousel-controls">
+            <a class="text-button" href="history.html">Lihat riwayat</a>
+            <button class="carousel-button" type="button" data-carousel-prev aria-label="Riwayat sebelumnya">
+              <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#icon-chevron-left"></use></svg>
+            </button>
+            <button class="carousel-button" type="button" data-carousel-next aria-label="Riwayat berikutnya">
+              <svg class="icon" aria-hidden="true"><use href="assets/icons/sprite.svg#icon-chevron-right"></use></svg>
+            </button>
+          </div>
+        </div>
+        <div class="movie-row" data-track></div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer__inner container">
+      <div class="footer__brand">
+        <a class="brand" href="index.html" aria-label="CineScope — Beranda">
+          <span class="brand__mark" aria-hidden="true"><svg class="icon"><use href="assets/icons/sprite.svg#icon-play"></use></svg></span>
+          <span class="brand__name">Cine<span>Scope</span></span>
+        </a>
+        <p class="footer__description">Temukan film, tonton trailer, lalu simpan pilihan Anda dalam Watchlist pribadi. Semua data disimpan di browser ini.</p>
+      </div>
+      <nav class="footer__nav" aria-label="Navigasi footer">
+        <p class="footer__nav-title">Jelajahi</p>
+        <a href="index.html">Beranda</a>
+        <a href="explore.html">Semua film</a>
+        <a href="watchlist.html">Watchlist</a>
+        <a href="history.html">Riwayat</a>
+        <a href="about.html">Tentang</a>
+      </nav>
+      <div class="footer__attribution">
+        <a href="https://www.themoviedb.org/" target="_blank" rel="noopener noreferrer" aria-label="Kunjungi The Movie Database (TMDB)">
+          <img class="tmdb-logo" src="assets/images/tmdb-logo.svg" alt="The Movie Database" width="142" height="11">
+        </a>
+        <p class="footer__notice">This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
+        <p class="footer__notice">CineScope hanya menyediakan metadata film dan trailer dari YouTube, bukan film lengkap.</p>
+      </div>
+    </div>
+    <div class="footer__bottom container">
+      <p>© <span data-current-year></span> CineScope. Dibuat untuk eksplorasi film.</p>
+      <p>Trailer adalah milik pemiliknya masing-masing.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

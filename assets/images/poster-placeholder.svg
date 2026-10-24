@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="750" viewBox="0 0 500 750" role="img" aria-label="Poster tidak tersedia">
+  <rect width="500" height="750" fill="#18181b"/>
+  <g fill="none" stroke="#3f3f46" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="150" y="290" width="200" height="150" rx="22"/>
+    <path d="M150 330h200M190 290v-35M310 290v-35M190 440v35M310 440v35"/>
+    <path d="m228 344 44 24-44 24z"/>
+  </g>
+  <text x="250" y="535" fill="#71717a" font-family="Arial, sans-serif" font-size="22" text-anchor="middle" letter-spacing="4">CINESCOPE</text>
+</svg>
